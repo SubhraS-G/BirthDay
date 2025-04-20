@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow-x: hidden;
+            color: #333;
+        }
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            z-index: 1000;
+            animation: fadeIn 1s ease-in-out;
+        }
+        #popup span {
+            cursor: pointer;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff4081, #ff80ab);
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+        #popup span:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #ff80ab, #ff4081);
+        }
+        #content.hidden {
+            display: none;
+        }
+        #letter {
+            padding: 20px;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Pacifico', cursive;
+            animation: slideIn 1s ease-out;
+        }
+        #timeline {
+            margin: 50px auto;
+            max-width: 800px;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item .message {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="popup">
+        <div>
+            <p>🎉 Happy Birthday, Aditya! 🎉</p>
+            <span onclick="closePopup()">Click/Tap to Continue</span>
+        </div>
+    </div>
+
+    <div id="content" class="hidden">
+        <div id="letter">
+            <h2>Dear Aditya,</h2>
+            <p>
+                Wishing you a day filled with love, laughter, and unforgettable memories. 
+                May this year bring you closer to your dreams and fill your life with happiness. 
+                You are truly special, and today is all about celebrating you!
+            </p>
+            <p>With love,</p>
+            <p>Your Friend</p>
+        </div>
+
+        <div id="timeline">
+            <div class="timeline-item" style="animation-delay: 0.2s;">
+                <img src="memory1.jpg" alt="Memory 1">
+                <div class="message">This was such a fun day! Remember this?</div>
+            </div>
+            <div class="timeline-item" style="animation-delay: 0.4s;">
+                <div class="message">One of the best moments we've shared together!</div>
+                <img src="memory2.jpg" alt="Memory 2">
+            </div>
+            <div class="timeline-item" style="animation-delay: 0.6s;">
+                <img src="memory3.jpg" alt="Memory 3">
+                <div class="message">A memory to cherish forever!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('content').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
