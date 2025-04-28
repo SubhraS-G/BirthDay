@@ -12,6 +12,7 @@
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             overflow-x: hidden;
             color: #333;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
         #popup {
             position: fixed;
@@ -122,14 +123,14 @@
 <body>
     <div id="popup">
         <div>
-            <p>🎉 Happy Birthday, Aditya! 🎉</p>
+            <p>🎉 Happy Birthday, Shruuuuu! 🎉</p>
             <span onclick="closePopup()">Click/Tap to Continue</span>
         </div>
     </div>
 
     <div id="content" class="hidden">
         <div id="letter">
-            <h2>Dear Aditya,</h2>
+            <h2>Dear Shrruuuu,</h2>
             <p>
                 Wishing you a day filled with love, laughter, and unforgettable memories. 
                 May this year bring you closer to your dreams and fill your life with happiness. 
@@ -142,15 +143,20 @@
         <div id="timeline">
             <div class="timeline-item" style="animation-delay: 0.2s;">
                 <img src="memory1.jpg" alt="Memory 1">
-                <div class="message">This was such a fun day! Remember this?</div>
+                <div class="message">Just a boy, lucky enough to capture a moment with his whole world in one frame.</div>
             </div>
             <div class="timeline-item" style="animation-delay: 0.4s;">
-                <div class="message">One of the best moments we've shared together!</div>
+                <div class="message">Your laughter, my peace — captured forever in a single breath of happiness.</div>
                 <img src="memory2.jpg" alt="Memory 2">
             </div>
             <div class="timeline-item" style="animation-delay: 0.6s;">
                 <img src="memory3.jpg" alt="Memory 3">
-                <div class="message">A memory to cherish forever!</div>
+                <div class="message">Your laughter, my peace — captured forever in a single breath of happiness.</div>
+            </div>
+            <!-- New Memory Section -->
+            <div class="timeline-item" style="animation-delay: 0.8s;">
+                <div class="message">Grace in her gaze, stories in her eyes — and a smile that outshines the world.</div>
+                <img src="memory4.jpg" alt="Memory 4">
             </div>
         </div>
     </div>
@@ -159,6 +165,7 @@
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
             document.getElementById('content').classList.remove('hidden');
+            document.getElementById('content').scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to content
         }
     </script>
 </body>
